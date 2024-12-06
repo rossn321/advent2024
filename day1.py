@@ -1,3 +1,5 @@
+# Part 1
+
 input = """31594   93577
 46608   24099
 78052   70524
@@ -1025,3 +1027,18 @@ for i in range(len(list_1)):
     cumulative_distance += abs(int(list_1[i]) - int(list_2[i]))
 
 print(cumulative_distance)
+
+# Part 2
+
+total_similarity_score = 0
+number_of_occurences = 0
+for i in range(len(list_1)):
+  number_of_occurences = 0
+  for j in range(len(list_2)):
+    if int(list_1[i]) == int(list_2[j]):
+      number_of_occurences += 1
+    else:
+      continue
+  total_similarity_score += (int(list_1[i]) * number_of_occurences)
+
+print(total_similarity_score)
